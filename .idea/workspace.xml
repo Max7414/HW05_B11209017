@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57b194a9-b654-4da8-a5bc-8f43fad79b20" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW05_B11209017.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TicTacToe/GameLauncher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TicTacToe/TicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/GameLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/GameLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TicTacToe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +37,7 @@
     "Application.GameLauncher.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>

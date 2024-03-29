@@ -2,7 +2,10 @@ package TicTacToe;
 
     class TicTacToe {
         private int xAxis, yAxis = 0;
-        private int gameArray[][] = new int[3][3];
+        private int gameArray[][] = {{3,3,3},
+                                     {3,3,3},
+                                     {3,3,3}
+        };
         public int getxAxis() {
             return xAxis;
         }
@@ -23,7 +26,56 @@ package TicTacToe;
             gameArray[getyAxis()][getyAxis()] = playerTurns;
         }
 
-        public void showGame(int[][] gameArray)
+        public String checkWinner() {
+            for (int i = 0; i < 3; i++) {
+                if (gameArray[i][0] == gameArray[i][1] && gameArray[i][1] == gameArray[i][2]) {
+                    if (gameArray[i][0] == 0) {
+                        return "「玩家1」勝利！！";
+                    }
+                    else if (gameArray[i][0] == 1)
+                        return "玩家2」勝利！!";
+                }
+            }
+
+            // 檢查列
+            for (int i = 0; i < 3; i++) {
+                if (gameArray[0][i] == gameArray[1][i] && gameArray[1][i] == gameArray[2][i]) {
+                    if (gameArray[0][i] == 0)
+                        return "「玩家1」勝利！！";
+                    else if (gameArray[0][i] == 1)
+                        return "「玩家2」勝利！!";
+                }
+            }
+
+            // 檢查對角線
+            if ((gameArray[0][0] == gameArray[1][1] && gameArray[1][1] == gameArray[2][2]) ||
+                    (gameArray[0][2] == gameArray[1][1] && gameArray[1][1] == gameArray[2][0])) {
+                if (gameArray[1][1] == 0)
+                    return "「玩家1」勝利！！";
+                else if (gameArray[1][1] == 1)
+                    return "玩家2」勝利！!";
+            }
+
+            // 檢查平局
+            boolean isDraw = true;
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (gameArray[i][j] == -1) {
+                        isDraw = false;
+                        break;
+                    }
+                }
+            }
+            if (isDraw)
+                return "平局";
+
+            // 無人獲勝
+            return "無人獲勝";
+        }
+
+
+
+        public void showGame()
         {
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {

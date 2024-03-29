@@ -9,11 +9,11 @@ public class GameLauncher {
 
         int playerTurns = 0;
         int xAxis, yAxis;
+        String result = "";
         TicTacToe ticTacToe = new TicTacToe();
 
-        boolean ifGameEnd = false;
 
-        while(!ifGameEnd) {
+        while(true) {
             playerTurns %= 2;
 
             if (playerTurns % 2 == 0) {
@@ -33,9 +33,15 @@ public class GameLauncher {
                 ticTacToe.setxAxis(xAxis);
                 ticTacToe.setyAxis(yAxis);
             }
-            
+
             ticTacToe.setGameArray(playerTurns);
             playerTurns++;
+            ticTacToe.showGame();
+            result = ticTacToe.checkWinner();
+
+            if (result.contains("獲勝")) {
+                System.exit(0);
+            }
         }
     }
 }
