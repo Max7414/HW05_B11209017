@@ -7,11 +7,11 @@ package TicTacToe;
                                      {3,3,3}
         };
         public int getXaxis() {
-            return xAxis;
+            return xAxis - 1;
         }
 
         public void setXaxis(int xAxis) {
-            this.xAxis = xAxis - 1;
+            this.xAxis = xAxis;
         }
 
         public int getYaxis() {
@@ -73,7 +73,13 @@ package TicTacToe;
             return "無人獲勝";
         }
 
-
+        public int getElement(int row, int column) {
+            if (row >= 0 && row < gameArray.length && column >= 0 && column < gameArray[0].length) {
+                return gameArray[row][column];
+            } else {
+                throw new IllegalArgumentException("Invalid row or column index");
+            }
+        }
 
         public void showGame()
         {
