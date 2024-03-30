@@ -33,7 +33,7 @@ package TicTacToe;
                         return "「玩家1」勝利！！";
                     }
                     else if (gameArray[i][0] == 1)
-                        return "玩家2」勝利！!";
+                        return "「玩家2」勝利！!";
                 }
             }
 
@@ -53,7 +53,7 @@ package TicTacToe;
                 if (gameArray[1][1] == 0)
                     return "「玩家1」勝利！！";
                 else if (gameArray[1][1] == 1)
-                    return "玩家2」勝利！!";
+                    return "「玩家2」勝利！!";
             }
 
             // 檢查平局 如果所有值都是非3的話
@@ -67,7 +67,7 @@ package TicTacToe;
                 }
             }
             if (isDraw)
-                return "平局";
+                return "平局！";
 
             return "";
         }
