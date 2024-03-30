@@ -6,24 +6,24 @@ package TicTacToe;
                                      {3,3,3},
                                      {3,3,3}
         };
-        public int getxAxis() {
+        public int getXaxis() {
             return xAxis;
         }
 
-        public void setxAxis(int xAxis) {
-            this.xAxis = xAxis;
+        public void setXaxis(int xAxis) {
+            this.xAxis = xAxis - 1;
         }
 
-        public int getyAxis() {
+        public int getYaxis() {
             return yAxis;
         }
 
-        public void setyAxis(int yAxis) {
-            this.yAxis = yAxis;
+        public void setYaxis(int yAxis) {
+            this.yAxis = yAxis - 1;
         }
 
         public void setGameArray(int playerTurns) {
-            gameArray[getyAxis()][getyAxis()] = playerTurns;
+            gameArray[getXaxis()][getYaxis()] = playerTurns;
         }
 
         public String checkWinner() {
@@ -83,14 +83,18 @@ package TicTacToe;
                         System.out.print("O");
                     } else if (gameArray[i][j] == 1) {
                         System.out.print("X");
+                    } else {
+                        System.out.print(" ");
                     }
+
                     if (j < 2) {
-                        System.out.print("|");
+                        System.out.print(" | ");
                     }
                 }
                 System.out.println();
+
                 if (i < 2) {
-                    System.out.println("-----");
+                    System.out.println("-- -- --");
                 }
             }
         }

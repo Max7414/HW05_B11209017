@@ -9,7 +9,7 @@ public class GameLauncher {
 
         int playerTurns = 0;
         int xAxis, yAxis;
-        String result = "";
+        String result;
         TicTacToe ticTacToe = new TicTacToe();
 
 
@@ -24,24 +24,27 @@ public class GameLauncher {
             }
             System.out.println("請輸入行數(1~3)：");
             xAxis = scanner.nextInt();
-            System.out.println("請輸入行數(1~3)：");
+            System.out.println("請輸入列數(1~3)：");
             yAxis = scanner.nextInt();
 
-            if (ticTacToe.getxAxis() == xAxis && ticTacToe.getyAxis() == yAxis)
+            if (ticTacToe.getXaxis() == xAxis-1 &&
+                    ticTacToe.getYaxis() == yAxis-1) {
                 System.out.println("該座標已經有值了");
-            else {
-                ticTacToe.setxAxis(xAxis);
-                ticTacToe.setyAxis(yAxis);
+            } else {
+                ticTacToe.setXaxis(xAxis);
+                ticTacToe.setYaxis(yAxis);
             }
 
             ticTacToe.setGameArray(playerTurns);
             playerTurns++;
             ticTacToe.showGame();
+
             result = ticTacToe.checkWinner();
 
             if (result.contains("獲勝")) {
                 System.exit(0);
             }
+
         }
     }
 }
