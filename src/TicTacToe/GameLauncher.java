@@ -55,9 +55,6 @@ public class GameLauncher {
                 continue;
             }
 
-            System.out.println(ticTacToe.getElement( xAxis-1,yAxis-1)+"value" );
-
-
             if (ticTacToe.getElement(xAxis-1,yAxis-1) == 1 || ticTacToe.getElement(xAxis-1,yAxis-1) == 0) {
                 System.out.println("該座標已經有值了");
                 continue;

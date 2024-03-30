@@ -1,33 +1,33 @@
 package TicTacToe;
 
     class TicTacToe {
-        private int xAxis, yAxis = 0;
-        private int gameArray[][] = {{3,3,3},
+        private int xAxis, yAxis = 0; //x軸y軸
+        private final int[][] gameArray = {{3,3,3},  //初始遊戲陣列 3代表空 0表示O 1 表示X
                                      {3,3,3},
                                      {3,3,3}
         };
-        public int getXaxis() {
+        public int getXaxis() {//getter
             return xAxis - 1;
         }
 
         public void setXaxis(int xAxis) {
             this.xAxis = xAxis;
-        }
+        }//setter
 
         public int getYaxis() {
             return yAxis;
-        }
+        }//getter
 
-        public void setYaxis(int yAxis) {
+        public void setYaxis(int yAxis) {//setter
             this.yAxis = yAxis - 1;
         }
 
-        public void setGameArray(int playerTurns) {
+        public void setGameArray(int playerTurns) { //將陣列的值調整為玩家的值
             gameArray[getXaxis()][getYaxis()] = playerTurns;
         }
 
         public String checkWinner() {
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 3; i++) { //檢查行
                 if (gameArray[i][0] == gameArray[i][1] && gameArray[i][1] == gameArray[i][2]) {
                     if (gameArray[i][0] == 0) {
                         return "「玩家1」勝利！！";
@@ -56,11 +56,11 @@ package TicTacToe;
                     return "玩家2」勝利！!";
             }
 
-            // 檢查平局
+            // 檢查平局 如果所有值都是非3的話
             boolean isDraw = true;
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
-                    if (gameArray[i][j] == -1) {
+                    if (gameArray[i][j] == 3) {
                         isDraw = false;
                         break;
                     }
@@ -69,8 +69,7 @@ package TicTacToe;
             if (isDraw)
                 return "平局";
 
-            // 無人獲勝
-            return "無人獲勝";
+            return "";
         }
 
         public int getElement(int row, int column) {
@@ -92,7 +91,6 @@ package TicTacToe;
                     } else {
                         System.out.print(" ");
                     }
-
                     if (j < 2) {
                         System.out.print(" | ");
                     }
