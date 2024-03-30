@@ -25,7 +25,7 @@ package TicTacToe;
         public void setGameArray(int playerTurns) { //將陣列的值調整為玩家的值
             gameArray[getXaxis()][getYaxis()] = playerTurns;
         }
-
+        //將遊戲陣列的值設定為0或1
         public String checkWinner() {
             for (int i = 0; i < 3; i++) { //檢查行
                 if (gameArray[i][0] == gameArray[i][1] && gameArray[i][1] == gameArray[i][2]) {
@@ -56,7 +56,7 @@ package TicTacToe;
                     return "「玩家2」勝利！!";
             }
 
-            // 檢查平局 如果所有值都是非3的話
+            // 檢查平局 如果所有值都是非3的話 已填滿遊戲
             boolean isDraw = true;
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
@@ -73,10 +73,11 @@ package TicTacToe;
         }
 
         public int getElement(int row, int column) {
+            // 檢查給定的行和列索引是否在gameArray的範圍內
             if (row >= 0 && row < gameArray.length && column >= 0 && column < gameArray[0].length) {
-                return gameArray[row][column];
+                return gameArray[row][column];  // 如果在範圍內，則返回指定行和列的元素
             } else {
-                throw new IllegalArgumentException("Invalid row or column index");
+                throw new IllegalArgumentException("Invalid row or column index");//照理不會出現的情況
             }
         }
 
@@ -84,20 +85,20 @@ package TicTacToe;
         {
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
-                    if (gameArray[i][j] == 0) {
+                    if (gameArray[i][j] == 0) {   // 如果值為0，則打印“O”（代表玩家O）
                         System.out.print("O");
-                    } else if (gameArray[i][j] == 1) {
+                    } else if (gameArray[i][j] == 1) { // 如果值為1，則打印“X”（代表玩家X）
                         System.out.print("X");
-                    } else {
+                    } else { // 如果值既不是0也不是1 (=3)，則打印一個空格（空單元格）
                         System.out.print(" ");
                     }
-                    if (j < 2) {
+                    if (j < 2) {  // 如果不是最後一列，則在列之間打印分隔符
                         System.out.print(" | ");
                     }
                 }
                 System.out.println();
 
-                if (i < 2) {
+                if (i < 2) { // 如果不是最後一行，則在行之間打印分隔符
                     System.out.println("-- -- --");
                 }
             }
